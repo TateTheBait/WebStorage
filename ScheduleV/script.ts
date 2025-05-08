@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as crypto from 'crypto';
+const CryptoJS = require('crypto-js');
 
 // YOU WILL NOT FIND ANY ORIGINAL MINIGAME FILES FOR MY PAYED SCRIPT. 
 // THIS IS JUST THE INITIAL FRAMEWORK!!
