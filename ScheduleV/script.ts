@@ -1,20 +1,8 @@
-const CryptoJS = require('crypto-js');
-
 // YOU WILL NOT FIND ANY ORIGINAL MINIGAME FILES FOR MY PAYED SCRIPT. 
 // THIS IS JUST THE INITIAL FRAMEWORK!!
 
 
 const ui: object = document.getElementById("UI"); 
-
-function encrypt(text) {
-    return CryptoJS.AES.encrypt(text, "WrenchKey1");
-}
-
-function decrypt(text) {
-    return CryptoJS.AES.decrypt(text, "WrenchKey1");
-}
-
-
 
 
 
@@ -24,9 +12,8 @@ async function switchPage(path: string) {
 
     const fileContent = await response.text();
     ui?.innerHTML = "";
-    decryptedfile = decrypt(file);
 
-    ui?.innerHTML = decryptedfile;
+    ui?.innerHTML = fileContent;
 
     // Developer Note:
     // Further Files need to be started not from body, but all of the stuff that goes IN body.
