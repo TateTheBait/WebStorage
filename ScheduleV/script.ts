@@ -19,8 +19,11 @@ function decrypt(text) {
 
 
 
-function switchPage(path) {
-    const file: string = fs.readFileSync(path, 'utf-8');
+async function switchPage(path: string) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`Failed to load ${path}`);
+
+    const fileContent = await response.text();
     ui?.innerHTML = "";
     decryptedfile = decrypt(file);
 
